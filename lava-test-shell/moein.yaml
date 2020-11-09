@@ -10,4 +10,4 @@ params:
 
 run:
     steps:
-        - lava-test-case nfs-dns --shell ./scripts/hello-world
+        - lava-test-case moein-c-test --shell ./scripts/hello-world
