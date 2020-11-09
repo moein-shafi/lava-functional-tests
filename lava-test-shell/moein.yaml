@@ -1,0 +1,13 @@
+metadata:
+    format: Lava-Test Test Definition 1.0
+    name: moein-hello-world-in-c
+    description: "Simple Hello World in C"
+    maintainer:
+        - mosafer.moein@gmail.com
+
+params:
+    INTERFACE: eth0
+
+run:
+    steps:
+        - lava-test-case nfs-dns --shell ./scripts/hello-world
