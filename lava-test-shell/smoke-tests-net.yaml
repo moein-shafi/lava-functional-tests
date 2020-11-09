@@ -1,0 +1,16 @@
+metadata:
+    format: Lava-Test Test Definition 1.0
+    name: smoke-tests-net
+    description: "Basic system network test for POSIX images. The test runs basic commands like ping and ip."
+    maintainer:
+        - lava-lab-team@linaro.org
+
+params:
+    USE_NC: 0
+
+run:
+    steps:
+        - lava-test-case linux-posix-ip-addresses --shell ip addr
+        - lava-test-case linux-posix-routes --shell ip route
+        - "[ \"$USE_NC\" ] || lava-test-case linux-posix-ping --shell 'ping -c 2 8.8.8.8 || lava-test-raise \"Network not able to ping; job exit\"'"
+        - "[ \"$USE_NC\" ] && lava-test-case linux-posix-ping --shell 'nc -vz -w 5 www.linaro.org 443 || lava-test-raise \"Network not able to connect; job exit\"'"
