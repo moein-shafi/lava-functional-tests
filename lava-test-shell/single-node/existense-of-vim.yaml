@@ -7,4 +7,4 @@ metadata:
 
 run:
     steps:
-        - lava-test-case check-vim-installation --shell vim -a
+        - bash check-vim-installation --shell vim -a
