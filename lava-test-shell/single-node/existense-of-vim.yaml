@@ -1,0 +1,10 @@
+metadata:
+    format: Lava-Test Test Definition 1.0
+    name: existense-of-vim
+    description: "Check if vim is installed in distro."
+    maintainer:
+        - shafi@mahsan.co
+
+run:
+    steps:
+        - lava-test-case check-vim-installation --shell vim -a
